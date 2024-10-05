@@ -13,26 +13,32 @@
       background: #000;
       color: white;
       font-family: 'Courier New', Courier, monospace;
+      position: relative;
     }
 
     .stars {
-      width: 2px;
-      height: 2px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
       background: transparent;
       box-shadow: 
         300px 150px white, 500px 250px white, 700px 450px white, 1200px 50px white, 
         1500px 350px white, 1700px 650px white, 200px 800px white, 600px 900px white;
       animation: twinkling 2s infinite ease-in-out;
+      z-index: 0;
     }
 
     @keyframes twinkling {
-      0% { transform: translate(0, 0); }
-      100% { transform: translateY(-500px); }
+      0% { opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { opacity: 0.8; }
     }
 
     .container {
       text-align: center;
       padding: 30px;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -47,6 +53,7 @@
     .nasa-image img {
       border: 5px solid white;
       max-width: 80%;
+      height: auto;
     }
 
     .linkedin {
@@ -57,6 +64,30 @@
       color: #0e76a8;
       font-size: 1.5em;
       text-decoration: none;
+    }
+
+    .space-fact {
+      margin-top: 20px;
+      font-size: 1.2em;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .space-fact button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      font-size: 1em;
+      background-color: #0e76a8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .space-fact button:hover {
+      background-color: #0a5a87;
     }
   </style>
 </head>
@@ -69,6 +100,12 @@
     <div class="nasa-image">
       <h2>🚀 Today's NASA Picture of the Day 🚀</h2>
       <img id="nasa-pic" src="" alt="NASA's Astronomy Picture of the Day">
+    </div>
+
+    <div class="space-fact">
+      <h2>💡 Fun Space Fact 💡</h2>
+      <p id="space-fact" style="display: none;"></p>
+      <button id="fact-btn">Reveal Space Fact!</button>
     </div>
 
     <div class="linkedin">
@@ -85,8 +122,18 @@
       .then(response => response.json())
       .then(data => {
         document.getElementById('nasa-pic').src = data.url;
+        document.getElementById('space-fact').textContent = data.explanation;
       })
       .catch(error => console.error('Error fetching NASA picture:', error));
+
+    // Fun fact button
+    const factButton = document.getElementById('fact-btn');
+    const spaceFact = document.getElementById('space-fact');
+
+    factButton.addEventListener('click', () => {
+      spaceFact.style.display = 'block';
+      factButton.style.display = 'none';
+    });
   </script>
 </body>
 </html>
