@@ -8,52 +8,60 @@
     body, html {
       margin: 0;
       padding: 0;
-      overflow: hidden;
+      overflow-y: scroll; /* Allow vertical scrolling */
       height: 100%;
       background: #000;
       color: white;
       font-family: 'Courier New', Courier, monospace;
-      position: relative;
     }
 
     .stars {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 2px;
+      height: 2px;
       background: transparent;
       box-shadow: 
         300px 150px white, 500px 250px white, 700px 450px white, 1200px 50px white, 
         1500px 350px white, 1700px 650px white, 200px 800px white, 600px 900px white;
       animation: twinkling 2s infinite ease-in-out;
-      z-index: 0;
     }
 
     @keyframes twinkling {
-      0% { opacity: 0.8; }
-      50% { opacity: 1; }
-      100% { opacity: 0.8; }
+      0% { transform: translate(0, 0); }
+      100% { transform: translateY(-500px); }
     }
 
     .container {
       text-align: center;
       padding: 30px;
-      position: relative;
-      z-index: 1;
+      position: relative; /* For absolute positioning of stars */
+      z-index: 1; /* Ensure content is above stars */
     }
 
     h1 {
       font-size: 3em;
       margin-top: 50px;
+      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
     }
 
     .nasa-image {
-      margin-top: 50px;
+      margin-top: 20px;
     }
 
     .nasa-image img {
       border: 5px solid white;
-      max-width: 80%;
-      height: auto;
+      max-width: 60%;
+      height: auto; /* Maintain aspect ratio */
+      margin: 20px auto; /* Center the image */
+      display: block; /* Center the image */
+    }
+
+    .content {
+      margin: 50px 20px;
+      background: rgba(255, 255, 255, 0.1); /* Light background for content */
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
     }
 
     .linkedin {
@@ -64,30 +72,17 @@
       color: #0e76a8;
       font-size: 1.5em;
       text-decoration: none;
+      transition: color 0.3s;
     }
 
-    .space-fact {
-      margin-top: 20px;
-      font-size: 1.2em;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      border-radius: 8px;
+    .linkedin a:hover {
+      color: #1e90ff; /* Change color on hover */
     }
 
-    .space-fact button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      font-size: 1em;
-      background-color: #0e76a8;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .space-fact button:hover {
-      background-color: #0a5a87;
+    footer {
+      margin-top: 50px;
+      font-size: 0.8em;
+      color: gray;
     }
   </style>
 </head>
@@ -102,16 +97,34 @@
       <img id="nasa-pic" src="" alt="NASA's Astronomy Picture of the Day">
     </div>
 
-    <div class="space-fact">
-      <h2>💡 Fun Space Fact 💡</h2>
-      <p id="space-fact" style="display: none;"></p>
-      <button id="fact-btn">Reveal Space Fact!</button>
+    <div class="content">
+      <h2>👨‍🚀 About Me: Space Commander</h2>
+      <p>
+        Welcome to my space station! I am a passionate developer specializing in <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Python</strong>, <strong>Selenium</strong>, <strong>Node.js</strong>, and <strong>Rust</strong>. My mission is to create innovative applications that explore the universe of technology.
+      </p>
+      <h3>🚀 My Tech Stack:</h3>
+      <ul>
+        <li>🔭 <strong>React Native</strong> - For building cross-platform mobile applications</li>
+        <li>🌌 <strong>Next.js</strong> - For server-rendered React applications</li>
+        <li>🛰 <strong>Python</strong> - For data science and machine learning</li>
+        <li>🤖 <strong>Selenium</strong> - For automated testing</li>
+        <li>🌐 <strong>Node.js</strong> - For backend development</li>
+        <li>🛠️ <strong>Rust</strong> - For high-performance applications</li>
+      </ul>
+      <h3>🌠 Let's Connect!</h3>
+      <p>
+        Feel free to reach out to me on LinkedIn. Let's explore the universe of opportunities together!
+      </p>
     </div>
 
     <div class="linkedin">
       <a href="https://www.linkedin.com/in/shreyansh1189/" target="_blank">👨‍🚀 Connect with me on LinkedIn</a>
     </div>
   </div>
+
+  <footer>
+    <p>© 2024 Shreyansh Tiwari. All rights reserved.</p>
+  </footer>
 
   <script>
     // NASA APOD API
@@ -122,18 +135,8 @@
       .then(response => response.json())
       .then(data => {
         document.getElementById('nasa-pic').src = data.url;
-        document.getElementById('space-fact').textContent = data.explanation;
       })
       .catch(error => console.error('Error fetching NASA picture:', error));
-
-    // Fun fact button
-    const factButton = document.getElementById('fact-btn');
-    const spaceFact = document.getElementById('space-fact');
-
-    factButton.addEventListener('click', () => {
-      spaceFact.style.display = 'block';
-      factButton.style.display = 'none';
-    });
   </script>
 </body>
 </html>
