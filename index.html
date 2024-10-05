@@ -12,7 +12,10 @@
       height: 100%;
       background: #000;
       color: white;
-      font-family: 'Arial', sans-serif; /* Changed font for better aesthetics */
+      font-family: 'Arial', sans-serif; /* Font style */
+      display: flex; /* Flexbox for layout */
+      flex-direction: column; /* Column layout */
+      align-items: center; /* Center items */
     }
 
     .stars {
@@ -32,40 +35,60 @@
     }
 
     .container {
-      text-align: center;
       padding: 30px;
+      text-align: center; /* Center align */
       position: relative; /* For absolute positioning of stars */
       z-index: 1; /* Ensure content is above stars */
+      display: flex; /* Flexbox layout for left and right sections */
+      align-items: center; /* Center vertically */
+      justify-content: space-between; /* Space between items */
+      width: 80%; /* Limit width */
+      margin: 20px auto; /* Center container */
+      background: rgba(255, 255, 255, 0.1); /* Light background for container */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px; /* Inner padding */
+      backdrop-filter: blur(5px); /* Background blur effect */
     }
 
     h1 {
       font-size: 3em;
       margin-top: 50px;
       text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+      animation: fadeIn 1s; /* Fade-in animation */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .nasa-image {
-      margin-top: 20px;
+      flex: 1; /* Take 1 part of the flex container */
+      margin-right: 20px; /* Space between image and content */
     }
 
     .nasa-image img {
       border: 5px solid white;
-      max-width: 30%; /* Make the image smaller */
+      max-width: 100%; /* Make the image responsive */
       height: auto; /* Maintain aspect ratio */
-      margin: 20px auto; /* Center the image */
       display: block; /* Center the image */
+      animation: zoomIn 1s; /* Zoom-in animation */
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
     }
 
     .content {
-      margin: 50px 20px;
-      background: rgba(255, 255, 255, 0.1); /* Light background for content */
-      padding: 20px;
-      border-radius: 10px;
-      backdrop-filter: blur(5px);
+      flex: 2; /* Take 2 parts of the flex container */
       text-align: left; /* Align text to the left */
-      max-width: 600px; /* Limit width for readability */
-      margin-left: auto; /* Align content to the right */
-      margin-right: auto; /* Align content to the right */
+      animation: slideIn 1s; /* Slide-in animation */
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
     }
 
     h2 {
@@ -73,37 +96,8 @@
       margin-bottom: 10px;
     }
 
-    h3 {
-      font-size: 1.5em; /* Increased subheading size */
-      margin-top: 20px;
-    }
-
-    .timeline {
-      position: relative;
-      margin: 20px auto;
-      padding: 20px;
-      border-left: 3px solid #0e76a8; /* Timeline line */
-    }
-
-    .timeline-event {
-      margin-bottom: 20px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .timeline-event::before {
-      content: '';
-      position: absolute;
-      left: -7px; /* Position the circle on the line */
-      top: 10px;
-      height: 10px;
-      width: 10px;
-      border-radius: 50%;
-      background: #0e76a8; /* Timeline dot color */
-    }
-
     .linkedin {
-      margin-top: 30px;
+      margin-left: 20px; /* Space on the left */
     }
 
     .linkedin a {
@@ -121,6 +115,10 @@
       margin-top: 50px;
       font-size: 0.8em;
       color: gray;
+      text-align: center; /* Center footer text */
+      position: absolute; /* Position footer at the bottom */
+      width: 100%; /* Full width */
+      bottom: 0; /* Align to bottom */
     }
   </style>
 </head>
@@ -128,52 +126,14 @@
   <div class="stars"></div>
 
   <div class="container">
-    <h1>🌌 Welcome to Shreyansh's SpaceTech Profile! 🌌</h1>
-
     <div class="nasa-image">
       <h2>🚀 Today's NASA Picture of the Day 🚀</h2>
       <img id="nasa-pic" src="" alt="NASA's Astronomy Picture of the Day">
     </div>
 
     <div class="content">
-      <h2>👨‍🚀 About Me: Space Commander</h2>
-      <p>
-        Welcome to my space station! I am a passionate developer specializing in <strong>React Native</strong>, <strong>Next.js</strong>, <strong>Python</strong>, <strong>Selenium</strong>, <strong>Node.js</strong>, and <strong>Rust</strong>. My mission is to create innovative applications that explore the universe of technology.
-      </p>
-      <h3>🚀 My Tech Stack:</h3>
-      <ul>
-        <li>🔭 <strong>React Native</strong> - For building cross-platform mobile applications</li>
-        <li>🌌 <strong>Next.js</strong> - For server-rendered React applications</li>
-        <li>🛰 <strong>Python</strong> - For data science and machine learning</li>
-        <li>🤖 <strong>Selenium</strong> - For automated testing</li>
-        <li>🌐 <strong>Node.js</strong> - For backend development</li>
-        <li>🛠️ <strong>Rust</strong> - For high-performance applications</li>
-      </ul>
-
-      <h3>🌠 My Timeline:</h3>
-      <div class="timeline">
-        <div class="timeline-event">
-          <h4>2024: Launched My SpaceTech Profile</h4>
-          <p>Created an interactive profile to showcase my skills and projects in the SpaceTech domain.</p>
-        </div>
-        <div class="timeline-event">
-          <h4>2023: Developed My First App</h4>
-          <p>Successfully developed and launched my first application using React Native.</p>
-        </div>
-        <div class="timeline-event">
-          <h4>2022: Joined the Developer Community</h4>
-          <p>Became an active member of several developer communities to enhance my skills and collaborate on projects.</p>
-        </div>
-        <div class="timeline-event">
-          <h4>2021: Graduated in Computer Science</h4>
-          <p>Completed my degree in Computer Science and discovered my passion for software development.</p>
-        </div>
-      </div>
-
-      <h3>🌠 Let's Connect!</h3>
-      <p>
-        Feel free to reach out to me on LinkedIn. Let's explore the universe of opportunities together!
-      </p>
+      <h1>👨‍🚀 Shreyansh Tiwari</h1>
+      <p>I am the founder of BitsToBug, a developer passionate about crafting innovative solutions. Currently, I manage my SpaceTech profile and explore exciting projects in technology.</p>
     </div>
 
     <div class="linkedin">
