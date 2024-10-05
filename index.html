@@ -12,7 +12,7 @@
       height: 100%;
       background: #000;
       color: white;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Arial', sans-serif; /* Changed font for better aesthetics */
     }
 
     .stars {
@@ -50,7 +50,7 @@
 
     .nasa-image img {
       border: 5px solid white;
-      max-width: 60%;
+      max-width: 30%; /* Make the image smaller */
       height: auto; /* Maintain aspect ratio */
       margin: 20px auto; /* Center the image */
       display: block; /* Center the image */
@@ -62,6 +62,44 @@
       padding: 20px;
       border-radius: 10px;
       backdrop-filter: blur(5px);
+      text-align: left; /* Align text to the left */
+      max-width: 600px; /* Limit width for readability */
+      margin-left: auto; /* Align content to the right */
+      margin-right: auto; /* Align content to the right */
+    }
+
+    h2 {
+      font-size: 2em; /* Increased heading size */
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.5em; /* Increased subheading size */
+      margin-top: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 20px auto;
+      padding: 20px;
+      border-left: 3px solid #0e76a8; /* Timeline line */
+    }
+
+    .timeline-event {
+      margin-bottom: 20px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -7px; /* Position the circle on the line */
+      top: 10px;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: #0e76a8; /* Timeline dot color */
     }
 
     .linkedin {
@@ -111,6 +149,27 @@
         <li>🌐 <strong>Node.js</strong> - For backend development</li>
         <li>🛠️ <strong>Rust</strong> - For high-performance applications</li>
       </ul>
+
+      <h3>🌠 My Timeline:</h3>
+      <div class="timeline">
+        <div class="timeline-event">
+          <h4>2024: Launched My SpaceTech Profile</h4>
+          <p>Created an interactive profile to showcase my skills and projects in the SpaceTech domain.</p>
+        </div>
+        <div class="timeline-event">
+          <h4>2023: Developed My First App</h4>
+          <p>Successfully developed and launched my first application using React Native.</p>
+        </div>
+        <div class="timeline-event">
+          <h4>2022: Joined the Developer Community</h4>
+          <p>Became an active member of several developer communities to enhance my skills and collaborate on projects.</p>
+        </div>
+        <div class="timeline-event">
+          <h4>2021: Graduated in Computer Science</h4>
+          <p>Completed my degree in Computer Science and discovered my passion for software development.</p>
+        </div>
+      </div>
+
       <h3>🌠 Let's Connect!</h3>
       <p>
         Feel free to reach out to me on LinkedIn. Let's explore the universe of opportunities together!
