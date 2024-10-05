@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreyansh Tiwari - SpaceTech Profile</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: #000;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .stars {
+      width: 2px;
+      height: 2px;
+      background: transparent;
+      box-shadow: 
+        300px 150px white, 500px 250px white, 700px 450px white, 1200px 50px white, 
+        1500px 350px white, 1700px 650px white, 200px 800px white, 600px 900px white;
+      animation: twinkling 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkling {
+      0% { transform: translate(0, 0); }
+      100% { transform: translateY(-500px); }
+    }
+
+    .container {
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 50px;
+    }
+
+    .nasa-image {
+      margin-top: 50px;
+    }
+
+    .nasa-image img {
+      border: 5px solid white;
+      max-width: 80%;
+    }
+
+    .linkedin {
+      margin-top: 30px;
+    }
+
+    .linkedin a {
+      color: #0e76a8;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="container">
+    <h1>🌌 Welcome to Shreyansh's SpaceTech Profile! 🌌</h1>
+
+    <div class="nasa-image">
+      <h2>🚀 Today's NASA Picture of the Day 🚀</h2>
+      <img id="nasa-pic" src="" alt="NASA's Astronomy Picture of the Day">
+    </div>
+
+    <div class="linkedin">
+      <a href="https://www.linkedin.com/in/shreyansh1189/" target="_blank">👨‍🚀 Connect with me on LinkedIn</a>
+    </div>
+  </div>
+
+  <script>
+    // NASA APOD API
+    const apiKey = 'AOiVi4heQWN9Qaw0bLCPyz8Zmx94MsatdGkrEM6C';  // Your actual NASA API key
+    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('nasa-pic').src = data.url;
+      })
+      .catch(error => console.error('Error fetching NASA picture:', error));
+  </script>
+</body>
+</html>
