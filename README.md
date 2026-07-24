@@ -1,61 +1,87 @@
-# 🌌 **Welcome to the Orbit of Innovation!** 🌌  
-> **Fueling code with cosmic innovation, propelling ideas beyond the stars.**  
+<h1 align="center">Shreyansh Tiwari</h1>
 
-## 🚀 **Mission Control**
-Greetings, Earthling! I'm **Shreyansh Tiwari**, your captain on this intergalactic coding journey. I specialize in taking tech to infinity and beyond, wielding an arsenal of futuristic tools to conquer any challenge the coding universe throws at me.
+<p align="center">
+  <b>AI Engineer</b><br>
+  Voice agents · RAG · Agent orchestration · LLM systems in production
+</p>
 
-## 🛠️ **Tech Stack Thrusters**
-Here's a sneak peek into my *Space Arsenal*:
-
-- ![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) **React Native** — Crafting stellar mobile apps that feel cosmic across all devices.
-- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) **Next.js** — Launching blazingly fast web projects, with server-side rendering that rivals lightspeed.
-- ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) **Python** — Writing intelligent, scalable code that can crack the mysteries of space.
-- ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white) **Selenium** — Automating web missions with pinpoint precision.
-- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) **Node.js** — Powering backend systems with the force of a hyperdrive.
-- ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white) **Rust** — Building fast and secure spacecraft (a.k.a. software) that can survive any cosmic condition.
-
-## 🛰️ **Space Tech Vision**
-Coding isn't just about solutions; it's about unlocking new galaxies of possibilities. I work to innovate in every orbit, whether it's automating workflows, building scalable systems, or engineering seamless user experiences. Every commit I make is a step toward the next tech frontier.
-
-### **What I Can Launch**  
-- **Interstellar Apps** 🌠: Mobile apps that operate at warp speed.
-- **Next-Gen Web Apps** 🛸: Scalable and lightning-fast websites that adapt to future demands.
-- **Automation Satellites** 🛰️: Intelligent bots to handle tedious tasks while you focus on the big picture.
-- **Backend Nebulas** 🪐: Robust backends built to withstand the pressures of data-heavy systems.
-
-## 🌠 **Cosmic Contributions**
-Check out some of my recent projects from the cosmic dock:
-
-- 🌍 [**MyBus**](#) — A full-stack React Native app for bus route management with integrated maps API.
-- 🛠️ [**HealMeFyi**](#) — A healthcare app with customer onboarding and backend systems in Node.js.
-- 🚚 [**Logistics Ops**](#) — Logistics project with Heremaps integration, rider management, and dynamic dashboards.
-
-## 🪐 **Cosmic Status Board**
-<!-- This section dynamically pulls in some cool space-related data! -->
-[![NASA's Picture of the Day](https://apod.nasa.gov/apod/image/2301/NGC1977_HubbleSchmidt_960.jpg)](https://apod.nasa.gov/apod/astropix.html)
-> **Current view of the cosmos!**  
-> Today's Astronomy Picture of the Day brought to you by NASA. 🌌
-
-## 📊 **GitHub Stats**
-![Shreyansh's GitHub stats](https://github-readme-stats.vercel.app/api?username=shreyansh1189&show_icons=true&theme=radical)
-
-## 🧑‍🚀 **Astronaut Log**
-- 💬 Reach out on [LinkedIn](https://www.linkedin.com/in/shreyansh1189/) to talk about how we can conquer new tech galaxies together.
-- 👾 Check out my repositories and let's build the future, one commit at a time.
-
-## ✨ **Final Frontier**
-May your code be as clean as the vacuum of space and your innovations shine as bright as the stars!
-
-<!-- Add dynamic GitHub activity -->
-## 🚀 **Recent Space Missions**
-[![Shreyansh's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=shreyansh1189&theme=react-dark)](https://github.com/shreyansh1189)
-
-<!-- Add top languages dynamically -->
-## 🛠️ **Top Technologies**
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shreyansh1189&layout=compact&theme=radical)](https://github.com/shreyansh1189)
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Applied%20AI-E8481C?style=flat-square" alt="Focus">
+  <img src="https://img.shields.io/badge/Experience-5%20years-141414?style=flat-square" alt="Experience">
+  <img src="https://img.shields.io/badge/Available-Freelance-2E7D32?style=flat-square" alt="Available">
+  <img src="https://img.shields.io/badge/Based%20in-Delhi,%20India-5C5A57?style=flat-square" alt="Location">
+</p>
 
 ---
 
-**Shreyansh Tiwari**  
-*Mission Commander | Software Astronaut*  
-**BitsToBug**
+Most AI work fails somewhere between the demo and the invoice. I work on the part after the demo: getting a voice agent to answer inside a second, proving a retrieval pipeline actually returns the right passage, keeping an agent from committing to something it shouldn't, and keeping token cost from quietly tripling in month two.
+
+Five years in software. The last stretch has been almost entirely applied AI.
+
+---
+
+## What I go deep on
+
+### Voice agents
+Streaming ASR with voice activity detection and barge-in, continuous language identification across multilingual calls, LLM reasoning with function calling, low latency TTS. The full conversational loop budgeted under one second, because past that a caller reads the pause as a dropped line.
+
+### RAG
+Chunking strategy tested rather than guessed. Retrieval accuracy measured before and after, not eyeballed. Citations enforced, and refusal preferred over invention when the corpus doesn't contain the answer.
+
+### Agents and orchestration
+Tool use, state, retries and guardrails. Agno, LangGraph, LangChain and CrewAI where they fit, custom orchestration where they don't. Multi-agent workflows that run unattended without a human restarting them every morning.
+
+### Fine-tuning and deployment
+LoRA and QLoRA on open weight models. Dataset preparation, evaluation against a held-out set, and serving with cost and latency tracked in production.
+
+---
+
+## Selected work
+
+| Project | What it is | Where it runs |
+|---|---|---|
+| **Kallix AI** | Fully managed multilingual voice agent. Answers and places calls in 10 languages, qualifies the caller, follows up on WhatsApp, writes the booking into CRM and calendar | Live · [kallix.in](https://kallix.in) |
+| **Document intelligence pipeline** | Vision model extraction over scanned certificates with unit conversion, null handling and structured output feeding downstream calculation | Production |
+| **On-premise LLM architecture** | Privacy-first deployment for regulated health data. De-identification before egress, provider abstraction as a compliance choke point, pgvector over external services | Production |
+| **Multi-agent content engine** | Autonomous generation and scheduled publishing, running without a human trigger, with guardrails before anything goes out | Production |
+
+---
+
+## Stack
+
+**Models**
+`Claude` `OpenAI` `Gemini` `Llama` `Mistral` `Qwen`
+
+**Agent frameworks**
+`Agno` `LangGraph` `LangChain` `CrewAI` `MCP`
+
+**Retrieval**
+`pgvector` `Pinecone` `Qdrant` `LlamaIndex`
+
+**Engineering**
+`Python` `FastAPI` `Node.js` `Next.js` `React Native` `PostgreSQL` `Redis`
+
+**Infrastructure**
+`AWS` `GCP` `Docker` `vLLM` `Ollama` `CI/CD`
+
+---
+
+## How I work
+
+**Scope before code.** You get a written breakdown of approach, risks and cost before anything starts, including an honest read on what a model cannot do for your use case. I would rather kill a feature in week one than bill for it in week six.
+
+**Evaluation is not optional.** If a system can't be measured, it can't be improved, and you have no way of knowing whether my last change made it worse.
+
+**I stay on it.** Models drift, providers change pricing, edge cases surface in month three. Handing over a working demo and disappearing is not delivery.
+
+---
+
+## Open to work
+
+Voice agents, RAG systems, agentic workflows and LLM integration. Send the problem rather than the spec and I'll tell you whether AI is the right answer before quoting anything.
+
+<p align="left">
+  <a href="mailto:t.shreyansh2002@gmail.com">
+    <img src="https://img.shields.io/badge/Email-t.shreyansh2002@gmail.com-E8481C?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+</p>
